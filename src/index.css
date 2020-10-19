@@ -36,7 +36,7 @@ input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
 
 .container-form {
   padding: 3rem 0 1px 0;
-  background-color: rgba(177, 177, 177, 0.391);
+  background-color: rgba(75, 74, 74, 0.391);
 }
 .message {
   text-align: center;

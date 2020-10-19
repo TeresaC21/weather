@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 import Weather from './components/Weather';
+import Error from './components/Error';
 
 function App() {
   // State
@@ -11,10 +12,9 @@ function App() {
     city: '',
     country: '',
   });
-
   const [consult, setConsult] = useState(false);
-
   const [resultAPI, setResultAPI] = useState({});
+  const [error, setError] = useState(false);
 
   const { city, country } = search;
 
@@ -29,12 +29,30 @@ function App() {
         const result = await response.json();
         setResultAPI(result);
         setConsult(false);
+
+        // Confirm results
+        if (result.cod === "404") {
+          setError(true);
+        } else {
+          setError(false);
+        }
       }
 
     }
     consultAPI();
 
   }, [consult /* city, country */]);
+
+  // Confirm Errors result
+  let componentError;
+  if (error) {
+    componentError = <Error message="There isn't such data" />
+  } else {
+    componentError = <Weather
+      resultAPI={resultAPI}
+    />
+  }
+
   return (
     <>
       <Header
@@ -52,9 +70,7 @@ function App() {
               />
             </div>
             <div className="col m6 s12">
-              <Weather
-                resultAPI={resultAPI}
-              />
+              {componentError}
             </div>
           </div>
         </div>
