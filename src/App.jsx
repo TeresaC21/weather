@@ -40,8 +40,8 @@ function App() {
 
     }
     consultAPI();
-
-  }, [consult /* city, country */]);
+    // eslint-disable-next-line
+  }, [consult]);/* city, country */
 
   // Confirm Errors result
   let componentError;
