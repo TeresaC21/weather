@@ -2,7 +2,11 @@
 
 In this project using library React, Materialize and Fetch for consult API, the porpose is for find ours city and country weather.
 
-## Example for consult API in this project with the requered was query like city, country and API key
+## Example for consult API
+
+- In this project with the requered was query like city, country and API key
+
+[Deploy project](https://weather-temp.netlify.app/)
 
 https:// api.openweathermap.org/data/2.5/weather?q= London, uk &appid= APIkey
 
@@ -14,8 +18,8 @@ https:// api.openweathermap.org/data/2.5/weather?q= London, uk &appid= APIkey
 
 Yarn start or npm start
 
-It correctly bundles React in production mode and optimizes the build for the best performance.
-You will also see any propTypes config to components React.
+- It correctly bundles React in production mode and optimizes the build for the best performance.
+- You will also see any propTypes config to components React.
 
 ### For deploy  
 
