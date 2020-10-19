@@ -6,13 +6,13 @@ In this project using library React, Materialize and Fetch for consult API, the 
 
 - In this project with the requered was query like city, country and API key
 
-[Deploy project](https://weather-temp.netlify.app/)
-
 https:// api.openweathermap.org/data/2.5/weather?q= London, uk &appid= APIkey
 
 ### API was consulting of this link
 
 [API link](https://openweathermap.org/)
+
+[Deploy project](https://weather-temp.netlify.app/)
 
 ### In the project directory, you can run
 
