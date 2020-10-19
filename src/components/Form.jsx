@@ -7,6 +7,7 @@ const Form = () => {
         city: '',
         country: '',
     });
+    const [error, setError] = useState(false);
 
     const { city, country } = search;
 
@@ -19,8 +20,26 @@ const Form = () => {
         )
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        // Validate
+        if (city.trim() === '' || country.trim() === '') {
+            setError(true);
+            return
+        }
+
+        setError(false);
+
+        // Pass to main component
+
+    }
+
     return (
-        <form>
+        <form
+            onSubmit={handleSubmit}
+        >
+            {error ? <p className="red darken-4 error">All fields are required</p> : null}
             <div className="input-field col s12">
                 <input
                     type="text"
@@ -49,6 +68,14 @@ const Form = () => {
                     <option value="PE">Perú</option>
                 </select>
                 <label htmlFor="country">Country: </label>
+            </div>
+
+            <div className="input-field col s12">
+                <input
+                    type="submit"
+                    value="Search wheather"
+                    className="waves-effect waves-light btn-large btn-block deep-purple darken-4"
+                />
             </div>
         </form >
     );
